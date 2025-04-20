@@ -11,7 +11,7 @@ done;
 echo "Fuzzers are running... Let's wait 24 hours now."
 for i in {1..24};
 do
-        sleep 1s
+        sleep 1h
         echo "`date --rfc-3339=seconds` - has been running for $i hours with `docker ps -q | wc -l` runners"
 done
 docker stop `docker ps -q`
