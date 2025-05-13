@@ -19,7 +19,7 @@ RUN apt-get update && \
     apt-get install -y make autoconf automake libtool zlib1g-dev
 
 RUN git clone --depth 1 https://github.com/madler/zlib.git
-#RUN git clone --depth 1 https://github.com/CS-412-25/libpng.git
-COPY libpng libpng
+RUN git clone --depth 1 --branch fuzzing-transformations https://github.com/CS-412-25/libpng.git
+# COPY libpng libpng
 RUN cp libpng/contrib/oss-fuzz/build.sh $SRC
 WORKDIR libpng
