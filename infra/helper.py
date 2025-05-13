@@ -1316,6 +1316,7 @@ def _introspector_prepare_corpus(args):
       logger.error('Failed to download corpora')
       return False
   else:
+    return True
     fuzzer_targets = _get_fuzz_targets(args.project)
     for fuzzer_name in fuzzer_targets:
       # Make a corpus directory.
